@@ -16,4 +16,14 @@ class BirdsController < ApplicationController
     end
   end
 
+#post /birds
+
+  def create 
+    data = request.body.read
+    bird = Bird.create(data)
+  render json: bird, status: :created
+  end
+
+
+
 end
